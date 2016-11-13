@@ -1,0 +1,113 @@
+var _wintvelt$elm_print_any$Main$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		if (_p0.ctor === 'Increment') {
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{counterValue: model.counterValue + 1});
+		} else {
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{counterValue: model.counterValue - 1});
+		}
+	});
+var _wintvelt$elm_print_any$Main$Model = F8(
+	function (a, b, c, d, e, f, g, h) {
+		return {name: a, someList: b, coordinates: c, counterValue: d, current: e, position: f, weekDays: g, isPresent: h};
+	});
+var _wintvelt$elm_print_any$Main$InSpace = F3(
+	function (a, b, c) {
+		return {ctor: 'InSpace', _0: a, _1: b, _2: c};
+	});
+var _wintvelt$elm_print_any$Main$initialModel = {
+	name: 'Admin',
+	someList: _elm_lang$core$Native_List.fromArray(
+		[1, 2, 3]),
+	coordinates: {ctor: '_Tuple2', _0: 123, _1: 2 / 3},
+	counterValue: 0,
+	current: _elm_lang$core$Maybe$Just(5),
+	position: A3(_wintvelt$elm_print_any$Main$InSpace, 10, 20, 30),
+	weekDays: _elm_lang$core$Dict$fromList(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: 0, _1: 'Monday'},
+				{ctor: '_Tuple2', _0: 1, _1: 'Tuesday'},
+				{ctor: '_Tuple2', _0: 2, _1: 'Wednesday'},
+				{ctor: '_Tuple2', _0: 3, _1: 'Thursday'}
+			])),
+	isPresent: true
+};
+var _wintvelt$elm_print_any$Main$Flat = F2(
+	function (a, b) {
+		return {ctor: 'Flat', _0: a, _1: b};
+	});
+var _wintvelt$elm_print_any$Main$NoWhere = {ctor: 'NoWhere'};
+var _wintvelt$elm_print_any$Main$Decrement = {ctor: 'Decrement'};
+var _wintvelt$elm_print_any$Main$Increment = {ctor: 'Increment'};
+var _wintvelt$elm_print_any$Main$view = function (model) {
+	var _p1 = _wintvelt$elm_print_any$PrintAny$log(model);
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$button,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Events$onClick(_wintvelt$elm_print_any$Main$Decrement)
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('-')
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text(
+						_elm_lang$core$Basics$toString(model.counterValue))
+					])),
+				A2(
+				_elm_lang$html$Html$button,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Events$onClick(_wintvelt$elm_print_any$Main$Increment)
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('+')
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$style(
+						_elm_lang$core$Native_List.fromArray(
+							[
+								{ctor: '_Tuple2', _0: 'position', _1: 'absolute'},
+								{ctor: '_Tuple2', _0: 'top', _1: '0'},
+								{ctor: '_Tuple2', _0: 'right', _1: '0'},
+								{ctor: '_Tuple2', _0: 'font-size', _1: '12px'},
+								{ctor: '_Tuple2', _0: 'background-color', _1: 'lightgrey'},
+								{ctor: '_Tuple2', _0: 'padding', _1: '8px'},
+								{ctor: '_Tuple2', _0: 'margin', _1: '4px'},
+								{ctor: '_Tuple2', _0: 'border-radius', _1: '4px'}
+							]))
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_wintvelt$elm_print_any$PrintAny$viewWithConfig,
+						A2(_wintvelt$elm_print_any$PrintAny$config, 20, 'debug-record'),
+						model)
+					]))
+			]));
+};
+var _wintvelt$elm_print_any$Main$main = {
+	main: _elm_lang$html$Html_App$beginnerProgram(
+		{model: _wintvelt$elm_print_any$Main$initialModel, view: _wintvelt$elm_print_any$Main$view, update: _wintvelt$elm_print_any$Main$update})
+};
