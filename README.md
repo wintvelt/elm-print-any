@@ -1,4 +1,4 @@
-# elm-model-print
+# elm-print-any
 
 A quick &amp; dirty helper to render any record type to the DOM, for debugging purposes.
 
