@@ -171,7 +171,7 @@ viewLine (Config config) ( indent, string ) =
             , ( "marginBottom", "0px" )
             ]
         ]
-        [ text string ]
+        [ text <| String.join "\n" <| String.split "\\n" string ]
 
 
 {-| Prints a stylized version of any record to the DOM.
